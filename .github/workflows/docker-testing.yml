@@ -45,7 +45,7 @@ jobs:
           cov-threshold-total: ${{env.COVERAGE_TOTAL}}
       - name: Coverage single fail - new issue
         if: ${{steps.pytester-cov.outputs.cov-threshold-single-fail == 'true'}}
-        uses: nashmaniac/create-issue-action@v1.1
+        uses: nashmaniac/create-issue-action@v1.2
         with:
           title: Pytest coverage single falls below minimum ${{env.COVERAGE_SINGLE}}
           token: ${{secrets.GITHUB_TOKEN}}
