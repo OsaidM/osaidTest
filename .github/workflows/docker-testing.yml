@@ -39,7 +39,7 @@ jobs:
         id: pytester-cov
         uses: programmingwithalex/pytester-cov@v1.2.4
         with:
-          pytest-tests-dir: 'osaidTest/tests/*, polls/tests/*'
+          pytest-tests-dir: 'osaidTest/tests, polls/tests'
           cov-threshold-single: ${{env.COVERAGE_SINGLE}}
           cov-threshold-total: ${{env.COVERAGE_TOTAL}}
       - name: Coverage single fail - new issue
