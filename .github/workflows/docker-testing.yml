@@ -41,6 +41,7 @@ jobs:
         with:
           pytest-root-dir: '.'
           pytest-options: 'osaidTest/tests'
+          cov-omit-list: 'osaidTest/tests/*'  # 👈 Exclude test code from coverage
           cov-threshold-single: ${{env.COVERAGE_SINGLE}}
           cov-threshold-total: ${{env.COVERAGE_TOTAL}}
       - name: Coverage single fail - new issue
@@ -57,6 +58,7 @@ jobs:
         run: |
           echo "cov single fail ${{ steps.pytester-cov.outputs.cov-threshold-single-fail}}"
           exit 1
+
       - name: Coverage total fail - new issue
         if: ${{steps.pytester-cov.outputs.cov-threshold-total-fail == 'true'}}
         uses: nashmaniac/create-issue-action@v1.2
