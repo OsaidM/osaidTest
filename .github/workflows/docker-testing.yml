@@ -35,9 +35,6 @@ jobs:
           python manage.py makemigrations
           python manage.py migrate
 
-      - name: Run tests
-        run: pytest
-
       - name: pytester-cov
         id: pytester-cov
         uses: programmingwithalex/pytester-cov@v1.2.4
