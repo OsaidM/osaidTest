@@ -39,9 +39,8 @@ jobs:
         id: pytester-cov
         uses: programmingwithalex/pytester-cov@v1.2.4
         with:
-          pytest-root-dir: '.'
+          pytest-root-dir: 'osaidTest/tests'
           pytest-tests-dir: 'osaidTest/tests/*'
-          cov-omit-list: 'osaidTest/tests/*'  # 👈 Exclude test code from coverage
           cov-threshold-single: ${{env.COVERAGE_SINGLE}}
           cov-threshold-total: ${{env.COVERAGE_TOTAL}}
       - name: Coverage single fail - new issue
