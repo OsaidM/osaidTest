@@ -40,7 +40,7 @@ jobs:
         uses: programmingwithalex/pytester-cov@v1.2.4
         with:
           pytest-root-dir: '.'
-          pytest-options: 'osaidTest/tests'
+          pytest-tests-dir: 'osaidTest/*'
           cov-omit-list: 'osaidTest/*, ./manage.py'  # 👈 Exclude test code from coverage
           cov-threshold-single: ${{env.COVERAGE_SINGLE}}
           cov-threshold-total: ${{env.COVERAGE_TOTAL}}
