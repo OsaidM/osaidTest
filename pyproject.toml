@@ -11,7 +11,7 @@
 [tool.coverage.run]
 # Specify the source directories containing your actual application code
 # Replace 'your_app_1', 'your_app_2' with your actual Django app names
-source = ["your_app_1", "your_app_2"]
+source = ["osaidTest/tests", "polls/tests"]
 # If all your code is under a 'src' directory:
 # source = ["src"]
 # Or if your apps are directly at the root:
