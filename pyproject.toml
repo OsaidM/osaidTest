@@ -11,7 +11,7 @@
 [tool.coverage.run]
 # Specify the source directories containing your actual application code
 # Replace 'your_app_1', 'your_app_2' with your actual Django app names
-source = ["osaidTest/tests", "polls/tests"]
+source = ["osaidTest", "polls"]
 # If all your code is under a 'src' directory:
 # source = ["src"]
 # Or if your apps are directly at the root:
@@ -19,7 +19,7 @@ source = ["osaidTest/tests", "polls/tests"]
 
 # Specify files/directories to OMIT from coverage reporting
 omit = [
-    "*/tests/*",       # Exclude all test files/folders
+    #"*/tests/*",       # Exclude all test files/folders
     "*/migrations/*",  # Exclude migration files
     "manage.py",       # Exclude manage.py
     "*/settings.py",   # Exclude settings files (usually)
@@ -31,18 +31,18 @@ omit = [
     "venv/*",
     "**/site-packages/*",
     # Add any other specific files/patterns to exclude
-    "osaidTest/tests/*", # Keep this if it's outside your source dirs but still needs omitting
+    #"osaidTest/tests/*", # Keep this if it's outside your source dirs but still needs omitting
 ]
 branch = true  # Measure branch coverage as well
 
 [tool.coverage.report]
 # You can also set fail_under here, but pytester-cov uses its own inputs
-# fail_under = 60
+fail_under = 60
 show_missing = true
 skip_covered = true # Don't report on 100% covered files unless verbose
 
 # Configure pytester-cov thresholds via environment variables in the workflow
 # or directly in the action's 'with' block.
 
-[tool.coverage.html]
-directory = "coverage_html_report" # Optional: Define where HTML report goes
+#[tool.coverage.html]
+#directory = "coverage_html_report" # Optional: Define where HTML report goes
