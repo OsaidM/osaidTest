@@ -63,7 +63,7 @@ jobs:
           # Capture multiline output correctly for GitHub Actions env var/output
           {
             echo 'report<<EOF'
-            coverage report -m --source=. --omit="$OMIT_LIST" --fail-under=0 || echo "Coverage report command finished (ignore exit code here)"
+            coverage report -m --source=. --fail-under=0 || echo "Coverage report command finished (ignore exit code here)"
             echo EOF
           } >> $GITHUB_OUTPUT
 
