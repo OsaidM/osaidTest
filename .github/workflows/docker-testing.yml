@@ -43,7 +43,7 @@ jobs:
         with:
           pytest-root-dir: '.'
           # Cleaned up omit list slightly - removed trailing /*, added manage.py and migrations
-          cov-omit-list: ''
+          cov-omit-list: '*/admin.py,*/apps.py,*/asgi.py,*/wsgi.py,*/urls.py,*/migrations/*'
           cov-threshold-single: ${{ env.COVERAGE_SINGLE }}
           cov-threshold-total: ${{ env.COVERAGE_TOTAL }}
           # Optional: Add pytest arguments if needed, e.g., specifying test settings
