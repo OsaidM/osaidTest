@@ -43,7 +43,7 @@ jobs:
         with:
           pytest-root-dir: '.'
           # Cleaned up omit list slightly - removed trailing /*, added manage.py and migrations
-          cov-omit-list: '*/admin.py,*/apps.py,*/asgi.py,*/wsgi.py,*/urls.py,*/migrations/*'
+          cov-omit-list: '*/admin.py,*/__init__.py,*/apps.py,*/settings.py,*/asgi.py,*/wsgi.py,*/urls.py,manage.py,*/migrations/*'
           cov-threshold-single: ${{ env.COVERAGE_SINGLE }}
           cov-threshold-total: ${{ env.COVERAGE_TOTAL }}
           # Optional: Add pytest arguments if needed, e.g., specifying test settings
@@ -75,7 +75,7 @@ jobs:
           title: Pytest coverage SINGLE file below ${{env.COVERAGE_SINGLE}}%
           token: ${{ secrets.GITHUB_TOKEN }}
           assignees: ${{ github.actor }}
-          labels: workflow-failed, coverage-issue
+          labels: workflow-failed
           body: |
             ## Coverage Failed: Single File Threshold
 
@@ -108,7 +108,7 @@ jobs:
           title: Pytest coverage TOTAL below ${{env.COVERAGE_TOTAL}}%
           token: ${{ secrets.GITHUB_TOKEN }}
           assignees: ${{ github.actor }}
-          labels: workflow-failed, coverage-issue
+          labels: workflow-failed
           body: |
             ## Coverage Failed: Total Threshold
 
