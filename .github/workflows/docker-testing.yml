@@ -57,7 +57,6 @@ jobs:
           echo "Generating detailed text report..."
           # Define the omit list here to reuse it easily
           # Ensure this list matches the one in the pytester-cov step
-          OMIT_LIST='*/admin.py,*/__init__.py,*/apps.py,*/settings.py,*/asgi.py,*/wsgi.py,*/urls.py,manage.py,*/migrations/*'
 
           # Use --source=. to tell coverage where to find the files mentioned in .coverage
           # Add --omit to the report command for consistency and to potentially avoid "No source" errors for omitted files
